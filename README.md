@@ -44,14 +44,7 @@ app.component('prmSearchResultAvailabilityLineAfter', {
 
 ## Adding component
 #### This step is for <b>Non Browzine</b> customers
-1. Modify the following BrowZine code in your <b>custom1.js</b>:
-```js
-  app.component('prmSearchResultAvailabilityLineAfter', {
-    bindings: { parentCtrl: '<' },
-    controller: 'prmSearchResultAvailabilityLineAfterController'
-  });
-```
-2. Add the <b>hathi-trust-availability-studio</b> template to <b>prmSearchResultAvailabilityLineAfter</b>the code.
+1.  Add the <b>hathi-trust-availability-studio</b> template to <b>prmSearchResultAvailabilityLineAfter</b>the code.
 ```js
     app.component('prmSearchResultAvailabilityLineAfter', {
       bindings: { parentCtrl: '<' },
