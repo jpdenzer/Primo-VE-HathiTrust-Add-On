@@ -8,11 +8,11 @@ Primo VE HathiTrust Add-On. This add-on is modified from <a href="https://github
 1. Add the js code from <b>Primo-VE-HathiTrust-Add-On.js</b>into your Primo <b>custom1.js</b> file
 
 2. Modify the following in your <b>custom1.js</b>:
-    ```js
+  ```js
     var app = angular.module('viewCustom', ['angularLoad');
-    ```
+  ```
 3. Add  the <b>hathiTrustAvailability</b> module to <b>app</b>:
-    ```js
+  ```js
   var app = angular.module('viewCustom', ['angularLoad', 'hathiTrustAvailability']);
   ```
 4. Add the <b>SearchResultAvailabilityLineAfterController</b>
