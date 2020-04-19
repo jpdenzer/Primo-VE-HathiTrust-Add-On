@@ -49,7 +49,7 @@ app.component('prmSearchResultAvailabilityLineAfter', {
     app.component('prmSearchResultAvailabilityLineAfter', {
       bindings: { parentCtrl: '<' },
   	template: '<hathi-trust-availability-studio parent-ctrl="$ctrl.parentCtrl">',
-      controller: 'prmSearchResultAvailabilityLineAfterController'
+      controller: 'SearchResultAvailabilityLineAfterController'
     });    
 ```
 
