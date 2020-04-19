@@ -1,0 +1,12 @@
+span.umnHathiTrustLink {
+  margin-left: -5px;
+}
+
+span.umnHathiTrustLink md-icon svg {
+  height: 1.2em;
+  filter: grayscale(100%);
+}
+
+span.umnHathiTrustLink:hover md-icon svg {
+  filter: grayscale(0%);
+}
