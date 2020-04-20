@@ -4,10 +4,10 @@
 Primo VE HathiTrust Add-On. This add-on is modified from <a href="https://github.com/UMNLibraries/primo-explore-hathitrust-availability">primo-explore-hathitrust-availability</a> to work with Primo VE.
 
 
-## Add code to custom1.js file
-1. Add the js code from <b>Primo-VE-HathiTrust-Add-On.js</b>into your Primo <b>custom1.js</b> file
+## Add code to custom.js file
+1. Add the js code from <b>Primo-VE-HathiTrust-Add-On.js</b>into your Primo <b>custom.js</b> file
 
-2. Modify the following in your <b>custom1.js</b>:
+2. Modify the following in your <b>custom.js</b>:
   ```js
     var app = angular.module('viewCustom', ['angularLoad');
   ```
@@ -24,7 +24,7 @@ app.controller('SearchResultAvailabilityLineAfterController', [function () {
 
 ## Adding component for Browzine support.
 #### This step is for Browzine customers with Browzine Add-On enabled
-1. Modify the following Browine code in your <b>custom1.js</b>:
+1. Modify the following Browine code in your <b>custom.js</b>:
 ```js
 app.component('prmSearchResultAvailabilityLineAfter', {
   bindings: { parentCtrl: '<' },
