@@ -5,7 +5,7 @@ Primo VE HathiTrust Add-On. This add-on is modified from <a href="https://github
 
 
 ## Add code to custom.js file
-1. Add the js code from <b>Primo-VE-HathiTrust-Add-On.js</b>into your Primo <b>custom.js</b> file
+1. Add the js entire code from <b>Primo-VE-HathiTrust-Add-On.js</b>into your main function in the Primo <b>custom.js</b> file
 
 2. Modify the following in your <b>custom.js</b>:
   ```js
