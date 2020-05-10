@@ -1,4 +1,4 @@
-//HathiTrust Add-On -START- 
+//HathiTrust Add-On -START-
 angular.module('hathiTrustAvailability', []).value('hathiTrustMsg', 'Full Text May be Available at HathiTrust').constant('hathiTrustBaseUrl', "https://catalog.hathitrust.org/api/volumes/brief/json/").config(['$sceDelegateProvider', 'hathiTrustBaseUrl', function ($sceDelegateProvider, hathiTrustBaseUrl) {
   var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
   urlWhitelist.push(hathiTrustBaseUrl + '**');
@@ -9,11 +9,11 @@ angular.module('hathiTrustAvailability', []).value('hathiTrustMsg', 'Full Text M
 
   svc.findFullViewRecord = function (ids) {
     var deferred = $q.defer();
-	
-	//If NOT hathitrust member set if to true 
-	//If hathitrust member set if to false 
+
+	//If NOT hathitrust member set if to true
+	//If hathitrust member set if to false
 	var nonhathiTrustMember = true;
-	
+
     var handleResponse = function handleResponse(resp) {
       var data = resp.data;
       var fullTextUrl = null;
@@ -21,9 +21,9 @@ angular.module('hathiTrustAvailability', []).value('hathiTrustMsg', 'Full Text M
         var result = data[ids[i]];
         for (var j = 0; j < result.items.length; j++) {
           var item = result.items[j];
-		  
+
            if(nonhathiTrustMember){
-			   if (true && item.rightsCode.toLowerCase() === "pd") {
+			   if (true && (item.rightsCode.toLowerCase() === "pd" || item.rightsCode.toLowerCase() === "pdus")) {
 				fullTextUrl = item.itemURL;
 				break;
 			  }else
@@ -55,12 +55,12 @@ angular.module('hathiTrustAvailability', []).value('hathiTrustMsg', 'Full Text M
   //self.hathiTrustMsg = hathiTrustMsg;
   self.msg = hathiTrustMsg;
   self.$onInit = function () {
-      updateHathiTrustAvailability();    
+      updateHathiTrustAvailability();
   };
 
   var updateHathiTrustAvailability = function updateHathiTrustAvailability() {
     var hathiTrustIds = (self.prmSearchResultAvailabilityLine.result.pnx.addata.oclcid || []).map(function (id) {
-		
+
       return "oclc:" + id.toLowerCase().replace("(ocolc)", "");
     });
     hathiTrust.findFullViewRecord(hathiTrustIds).then(function (res) {
@@ -107,4 +107,4 @@ angular.module('hathiTrustAvailability', []).value('hathiTrustMsg', 'Full Text M
                 </a>\
               </span>'
 });
-//HathiTrust Add-On  -END- 
+//HathiTrust Add-On  -END-
